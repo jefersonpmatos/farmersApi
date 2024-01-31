@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Farmer {
+  id                    Int       @id @default(autoincrement())
+  cpfCnpj               String
+  name                  String
+  farmName              String
+  city                  String
+  state                 String
+  totalAreaHectares     Float
+  cultivableAreaHectares Float
+  vegetationAreaHectares Float
+  crops                 Crop[]
+
+  @@map("famers")
+}
+
+model Crop {
+  id   Int    @id @default(autoincrement())
+  name String
+  farmers Farmer[]
+
+  @@map("crops")
+}

@@ -1,6 +1,28 @@
-# Documentação das Rotas da API
+##  Como rodar localmente
 
-## Registro de Novo Agricultor
+### 👾 Clone repo
+
+```
+git clone git@github.com:jefersonpmatos/farmersApi.git
+```
+
+### 🔧 Install deps
+
+```
+npm install or yarn add
+```
+
+### 🚀 Run the project:
+
+```
+npm run dev or yarn dev
+```
+
+***
+
+## Rotas da API
+
+### Registro de Novo Agricultor
 
 Endpoint: `POST /farmer/register`
 
@@ -55,9 +77,8 @@ Status: 201 Created
 }
 
 ```
-
-
-## Edição de Agricultor Existente
+***
+### Edição de Agricultor Existente
 Endpoint: PUT `/farmer/:id`
 
 ### Descrição
@@ -107,8 +128,9 @@ Status: 200 OK
 }
 
 ```
+***
 
-## Exclusão de Agricultor
+### Exclusão de Agricultor
 Endpoint: DELETE `/farmer/:id`
 
 ### Descrição
@@ -122,8 +144,9 @@ Status: 200 OK
 }
 
 ```
+***
 
-## Obtenção de métricas
+### Obtenção de métricas
 Endpoint: GET `/metrics`
 
 ### Descrição

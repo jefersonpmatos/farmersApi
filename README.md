@@ -146,6 +146,31 @@ Status: 200 OK
 ```
 ***
 
+### Lista todos agricultores cadastrados
+Endpoint: GET `/farmers`
+
+### Descrição
+Esta rota lista todos agricultores cadastrados
+
+### Exemplo resposta de sucesso
+A resposta contém um objeto JSON com os seguintes dados de cada agricultor:
+```json
+Status: 200 OK
+
+{
+    "id": 1,
+    "cpfCnpj": "12345678901",
+    "name": "João da Silva",
+    "farmName": "Fazenda Feliz",
+    "city": "Cidade A",
+    "state": "Estado X",
+    "totalAreaHectares": 100,
+    "cultivableAreaHectares": 80,
+    "vegetationAreaHectares": 20
+  }
+```
+***
+
 ### Obtenção de métricas
 Endpoint: GET `/metrics`
 

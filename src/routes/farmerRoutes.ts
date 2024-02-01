@@ -5,6 +5,7 @@ import FarmerMiddlewares from "../middlewares/farmer.middlewares";
 
 const router = express.Router();
 
+router.get("/farmers", FarmerController.getAllFarmers);
 router.post(
   "/farmer/register",
   FarmerMiddlewares.validateRegisterFarmerData,

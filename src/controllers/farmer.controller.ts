@@ -5,6 +5,21 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class FarmerController {
+  async getAllFarmers(req: Request, res: Response): Promise<void> {
+    try {
+      const allFarmers = await prisma.farmer.findMany({
+        include: {
+          crops: true,
+        },
+      });
+
+      res.status(200).json(allFarmers);
+    } catch (error) {
+      console.error("Erro ao obter todos os agricultores:", error);
+      res.status(500).json({ message: "Erro ao obter agricultores", error });
+    }
+  }
+
   async registerFarmer(req: Request, res: Response): Promise<void> {
     try {
       const {
